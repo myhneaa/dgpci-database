@@ -15,4 +15,7 @@ This database is a personal interpretation of how the Romanian DMV could be impl
 4. Check if run was successful and all tables and constrains were created
 5. Enjoy!
 
-### More information in /docs/ (Romanian language only, sorry)
+### More information in /docs/ (romanian language only, sorry)
+
+### Disclaimer
+This is a project for a Databases course at University of Bucharest. It is not intended for use as a proper and definite database solution.
