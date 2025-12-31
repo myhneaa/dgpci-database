@@ -17,5 +17,5 @@ This database is a personal interpretation of how the Romanian DMV could be impl
 
 ### More information in /docs/ (romanian language only, sorry)
 
-### Disclaimer
+## Disclaimer
 This is a project for a Databases course at University of Bucharest. It is not intended for use as a proper and definite database solution.
