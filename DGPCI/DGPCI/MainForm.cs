@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Common;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -28,7 +29,7 @@ namespace DGPCI
                 OracleDataAdapter dataAdapter = new OracleDataAdapter(sql, connection);
                 DataTable dataTable = new DataTable();
                 dataAdapter.Fill(dataTable);
-                dataGridView1.DataSource = dataTable;
+                tabelDgpci.DataSource = dataTable;
             }
             catch (Exception ex)
             {
@@ -36,22 +37,22 @@ namespace DGPCI
             }
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void tabelDgpci_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
-                DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+                DataGridViewRow row = tabelDgpci.Rows[e.RowIndex];
             }
         }
 
-        private void dataGridView1_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
+        private void tabelDgpci_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right && e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
-                dataGridView1.ClearSelection();
-                dataGridView1.Rows[e.RowIndex].Selected = true;
+                tabelDgpci.ClearSelection();
+                tabelDgpci.Rows[e.RowIndex].Selected = true;
                 indexColoanaSelectata = e.ColumnIndex;
-                dataGridView1.CurrentCell = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex];
+                tabelDgpci.CurrentCell = tabelDgpci.Rows[e.RowIndex].Cells[e.ColumnIndex];
             }
         }
 
@@ -65,9 +66,9 @@ namespace DGPCI
             }
         }
 
-        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        private void modificare_Click(object sender, EventArgs e)
         {
-            if(dataGridView1.SelectedRows.Count == 0 || comboBox1.SelectedItem == null || indexColoanaSelectata == -1)
+            if(tabelDgpci.SelectedRows.Count == 0 || comboBox1.SelectedItem == null || indexColoanaSelectata == -1)
             {
                 MessageBox.Show("Celula invalida!", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -77,8 +78,8 @@ namespace DGPCI
                 try
                 {
                     string tabelSelectat = comboBox1.SelectedItem.ToString();
-                    string numeColoana = dataGridView1.Columns[indexColoanaSelectata].Name;
-                    string valoareVeche = dataGridView1.SelectedRows[0].Cells[indexColoanaSelectata].Value.ToString();
+                    string numeColoana = tabelDgpci.Columns[indexColoanaSelectata].Name;
+                    string valoareVeche = tabelDgpci.SelectedRows[0].Cells[indexColoanaSelectata].Value.ToString();
 
                     string numeColoanaID = "";
                     switch (tabelSelectat)
@@ -115,12 +116,12 @@ namespace DGPCI
                             break;
                     }
 
-                    string valoareID = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
-                    if(numeColoana == numeColoanaID)
-                    {
-                        MessageBox.Show("Nu ai voie sa modifici ID-ul (Cheia Primara).", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
+                    string valoareID = tabelDgpci.SelectedRows[0].Cells[0].Value.ToString();
+                    //if(numeColoana == numeColoanaID)
+                    //{
+                    //    MessageBox.Show("Nu ai voie sa modifici ID-ul (Cheia Primara).", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    //    return;
+                    //}
 
                     string valoareNoua = ShowInputDialog(
                         "Modifica " + numeColoana + " (Valoare Veche: " + valoareVeche + ")",
@@ -149,12 +150,12 @@ namespace DGPCI
             }
         }
 
-        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        private void stergere_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count > 0 & comboBox1.SelectedItem != null)
+            if (tabelDgpci.SelectedRows.Count > 0 & comboBox1.SelectedItem != null)
             {
                 string tabelSelectat = comboBox1.SelectedItem.ToString();
-                string valoareID = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
+                string valoareID = tabelDgpci.SelectedRows[0].Cells[0].Value.ToString();
                 string numeColoanaID = "";
 
                 switch (tabelSelectat)
@@ -230,7 +231,101 @@ namespace DGPCI
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void inserareDate_Click(object sender, EventArgs e)
+        {
+            if (comboBox1.SelectedItem == null)
+            {
+                MessageBox.Show("Selecteaza un tabel din meniul de sus.", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+
+            }
+            else
+            {
+                string tabelSelectat = comboBox1.SelectedItem.ToString();
+                Form f = new Form();
+                f.AutoSize = true;
+                f.Text = "Inserare in " + tabelSelectat;
+                f.StartPosition = FormStartPosition.CenterScreen;
+                f.AutoScroll = true;
+
+                int top = 20;
+                List<TextBox> intrari = new List<TextBox>();
+                List<string> coloane = new List<string>();
+
+                foreach (DataGridViewColumn col in tabelDgpci.Columns)
+                {
+                    Label l = new Label();
+                    l.Text = col.Name;
+                    l.Top = top;
+                    l.Left = 20;
+                    l.AutoSize = true;
+                    f.Controls.Add(l);
+
+                    TextBox t = new TextBox();
+                    t.Top = top - 3;
+                    t.Left = 210;
+                    t.Width = 200;
+                    t.Name = "txt_" + col.Name;
+
+                    if(col.Name.Contains("DATA"))
+                    {
+                        t.Text = "ZZ-LLL-AAAA";
+                    }
+
+                    f.Controls.Add(t);
+                    coloane.Add(col.Name);
+                    intrari.Add(t);
+
+                    top += 35;
+                }
+
+                Button btnOk = new Button();
+                btnOk.Text = "Inserare";
+                btnOk.Top = top + 20;
+                btnOk.Left = 150;
+                btnOk.Width = 100;
+                btnOk.DialogResult = DialogResult.OK;
+                f.Controls.Add(btnOk);
+                f.AcceptButton = btnOk;
+
+                if (f.ShowDialog() == DialogResult.OK)
+                {
+                    string colSql = string.Join(", ", coloane);
+                    string paramSql = "";
+
+
+                    for (int i = 0; i < coloane.Count; i++)
+                    {
+                        paramSql += ":p" + i + (i < coloane.Count - 1 ? ", " : "");
+                    }
+
+                    string sql = "INSERT INTO " + tabelSelectat + " (" + colSql + ") VALUES (" + paramSql + ")";
+
+                    try
+                    {
+                        using (OracleCommand cmd = new OracleCommand(sql, connection))
+                        {
+                            cmd.BindByName = true;
+                            for (int i  = 0; i < intrari.Count; i++)
+                            {
+                                cmd.Parameters.Add(new OracleParameter("p" + i, intrari[i].Text));
+                            }
+
+                            cmd.ExecuteNonQuery();
+
+                            MessageBox.Show("Rand inserat cu succes in " + tabelSelectat + ".", "Succes", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            incarcaDate("SELECT * FROM " + tabelSelectat);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Date invalide: " + ex.Message, "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+        }
+
+        private void subB_Click(object sender, EventArgs e)
         {
             try
             {
@@ -246,7 +341,7 @@ namespace DGPCI
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void subC_Click(object sender, EventArgs e)
         {
             try
             {
@@ -262,7 +357,7 @@ namespace DGPCI
             }
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void subD_Click(object sender, EventArgs e)
         {
             try
             {
@@ -277,7 +372,7 @@ namespace DGPCI
             }
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void subF_Click(object sender, EventArgs e)
         {
             try
             {
