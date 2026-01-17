@@ -1,0 +1,41 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\mahon\\Desktop\\bd\\DGPCI\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F95BBC70-F46A-4877-9195-85A087325199}|DGPCI\\DGPCI.csproj|c:\\users\\mahon\\desktop\\bd\\dgpci\\dgpci\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F95BBC70-F46A-4877-9195-85A087325199}|DGPCI\\DGPCI.csproj|solutionrelative:dgpci\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainForm.cs",
+              "DocumentMoniker": "C:\\Users\\mahon\\Desktop\\bd\\DGPCI\\DGPCI\\MainForm.cs",
+              "RelativeDocumentMoniker": "DGPCI\\MainForm.cs",
+              "ToolTip": "C:\\Users\\mahon\\Desktop\\bd\\DGPCI\\DGPCI\\MainForm.cs",
+              "RelativeToolTip": "DGPCI\\MainForm.cs",
+              "ViewState": "AgIAAOsAAAAAAAAAAAAwwCMBAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-17T12:52:38.174Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
