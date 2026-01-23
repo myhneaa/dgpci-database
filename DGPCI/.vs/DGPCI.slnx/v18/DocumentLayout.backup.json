@@ -1,18 +1,10 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\mahon\\source\\repos\\myhneaa\\dgpci-database\\DGPCI\\",
+  "WorkspaceRootPath": "C:\\Users\\mahon\\Desktop\\dgpci-database\\DGPCI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F95BBC70-F46A-4877-9195-85A087325199}|DGPCI\\DGPCI.csproj|c:\\users\\mahon\\source\\repos\\myhneaa\\dgpci-database\\dgpci\\dgpci\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F95BBC70-F46A-4877-9195-85A087325199}|DGPCI\\DGPCI.csproj|c:\\users\\mahon\\desktop\\dgpci-database\\dgpci\\dgpci\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F95BBC70-F46A-4877-9195-85A087325199}|DGPCI\\DGPCI.csproj|solutionrelative:dgpci\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F95BBC70-F46A-4877-9195-85A087325199}|DGPCI\\DGPCI.csproj|c:\\users\\mahon\\source\\repos\\myhneaa\\dgpci-database\\dgpci\\dgpci\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{F95BBC70-F46A-4877-9195-85A087325199}|DGPCI\\DGPCI.csproj|solutionrelative:dgpci\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F95BBC70-F46A-4877-9195-85A087325199}|DGPCI\\DGPCI.csproj|c:\\users\\mahon\\source\\repos\\myhneaa\\dgpci-database\\dgpci\\dgpci\\mainform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F95BBC70-F46A-4877-9195-85A087325199}|DGPCI\\DGPCI.csproj|solutionrelative:dgpci\\mainform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,7 +14,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -30,38 +22,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "MainForm.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\mahon\\source\\repos\\myhneaa\\dgpci-database\\DGPCI\\DGPCI\\MainForm.Designer.cs",
-              "RelativeDocumentMoniker": "DGPCI\\MainForm.Designer.cs",
-              "ToolTip": "C:\\Users\\mahon\\source\\repos\\myhneaa\\dgpci-database\\DGPCI\\DGPCI\\MainForm.Designer.cs",
-              "RelativeToolTip": "DGPCI\\MainForm.Designer.cs",
-              "ViewState": "AgIAAIEAAAAAAAAAAAAtwHcAAAATAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-17T20:43:40.977Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "MainForm.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\mahon\\source\\repos\\myhneaa\\dgpci-database\\DGPCI\\DGPCI\\MainForm.cs",
-              "RelativeDocumentMoniker": "DGPCI\\MainForm.cs",
-              "ToolTip": "C:\\Users\\mahon\\source\\repos\\myhneaa\\dgpci-database\\DGPCI\\DGPCI\\MainForm.cs [Design]",
-              "RelativeToolTip": "DGPCI\\MainForm.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-17T20:04:42.375Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "MainForm.cs",
-              "DocumentMoniker": "C:\\Users\\mahon\\source\\repos\\myhneaa\\dgpci-database\\DGPCI\\DGPCI\\MainForm.cs",
+              "DocumentMoniker": "C:\\Users\\mahon\\Desktop\\dgpci-database\\DGPCI\\DGPCI\\MainForm.cs",
               "RelativeDocumentMoniker": "DGPCI\\MainForm.cs",
-              "ToolTip": "C:\\Users\\mahon\\source\\repos\\myhneaa\\dgpci-database\\DGPCI\\DGPCI\\MainForm.cs",
+              "ToolTip": "C:\\Users\\mahon\\Desktop\\dgpci-database\\DGPCI\\DGPCI\\MainForm.cs",
               "RelativeToolTip": "DGPCI\\MainForm.cs",
-              "ViewState": "AgIAABYBAAAAAAAAAAAAwNcAAAAdAAAAAAAAAA==",
+              "ViewState": "AgIAAEMBAAAAAAAAAAAAwFABAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-17T12:52:38.174Z",
               "EditorCaption": ""

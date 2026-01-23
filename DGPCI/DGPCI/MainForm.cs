@@ -333,7 +333,7 @@ namespace DGPCI
                     FROM PERSOANA P
                     JOIN PERMIS PC ON P.ID_PERSOANA = PC.ID_PERSOANA
                     JOIN DETALII_PERMIS DP ON PC.ID_PERMIS = DP.ID_PERMIS
-                    WHERE lower(P.COD_PERSOANA) like '1%' and lower(DP.COD_CATEGORIE) like '%b%'");
+                    WHERE lower(P.COD_PERSOANA) like '1%' and trim(lower(DP.COD_CATEGORIE)) like 'b'");
             }
             catch (Exception ex)
             {
