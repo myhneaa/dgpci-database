@@ -93,6 +93,9 @@ namespace DGPCI
                         case "CATEGORIE":
                             numeColoanaID = "COD_CATEGORIE";
                             break;
+                        case "VEHICUL":
+                            numeColoanaID = "SERIE_SASIU";
+                            break;
                         case "SANCTIUNE":
                             numeColoanaID = "ID_SANCTIUNE";
                             break;
@@ -117,11 +120,11 @@ namespace DGPCI
                     }
 
                     string valoareID = tabelDgpci.SelectedRows[0].Cells[0].Value.ToString();
-                    //if(numeColoana == numeColoanaID)
-                    //{
-                    //    MessageBox.Show("Nu ai voie sa modifici ID-ul (Cheia Primara).", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    //    return;
-                    //}
+                    if (numeColoana == numeColoanaID)
+                    {
+                        MessageBox.Show("Nu ai voie sa modifici ID-ul (Cheia Primara).", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
 
                     string valoareNoua = ShowInputDialog(
                         "Modifica " + numeColoana + " (Valoare Veche: " + valoareVeche + ")",
